@@ -1,0 +1,4 @@
+Flask
+pyttsx3
+mysql-connector-python
+#a bunch more stuff, but i need to check them all to see if they are default or not
