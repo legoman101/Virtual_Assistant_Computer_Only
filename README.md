@@ -5,6 +5,18 @@
 - clone this repo
 - ```pip install requirements.txt```
 - update the ```Passes.py``` file with your information (the program will work as it is, you just wont be able to email or use wolfram)
+Format of the ```Passes.py``` script:
+
+```
+
+#Passes.py
+wolframappid = '*'
+Your_Username = "*"
+Codingemail = "*"
+Normalemail = "*"
+Your_Password = "*"
+
+```
 
 
 I will be trying to make this modular,  where there is one device (a raspberry pi probably) running a host script and that will send information to other pis, so they can do other things.
