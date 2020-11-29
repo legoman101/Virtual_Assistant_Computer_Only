@@ -1,3 +1,4 @@
+from dotenv import load_dotenv # for getting info from the env file
 import pyttsx3 # for text-to-speech
 import webbrowser #for opening web pages
 import smtplib #for emailing
@@ -13,16 +14,27 @@ import keyboard #to register a keypress
 from pynput.keyboard import Key, Controller #to use the media keys
 import pynput
 from googlesearch import search # to search google for things
-from Passes import * #for the Passes
 
 #setup pynput
 pynputkeyboard = Controller()
+
+
 
 # Initialize speech 
 engine = pyttsx3.init('sapi5')
 
 #set the username
-MASTER = 'Name of Master'
+#MASTER = os.getenv('MASTER')
+MASTER = ''
+
+#Initialize dotenv & get the requirements
+load_dotenv()
+wolframappid = os.getenv('wolframappid')
+Your_Username = os.getenv('Your_Username')
+Codingemail = os.getenv('Codingemail')
+Normalemail = os.getenv('Normalemail')
+Your_Password = os.getenv('Your_Password')
+
 
 #what voice the text to speech will use
 american = "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_ZIRA_11.0" #Path to the american voice
@@ -46,15 +58,11 @@ def listallcommands():
 def todolist():# list the things i have written down to do to improve JARVIS
     print(' ')
     printspeak('Here are the items on your to do list for JARVIS...')
-    printspeak('- need to get setup the database')
-    printspeak('- need to get the other pis to retrieve the data from the database')
-    printspeak('- need to setup the Doorlock on another pi, the Lock,Unlock,Open,Close functions')
     printspeak('- need to add the help command')
     printspeak('- need to add more recipients in the email section')
     printspeak('- need to open settings')
     printspeak('- need to open the folders in File Explorer, not cmd')
     printspeak('- need to somehow get a link to the run command {so that whatever you say it will type into the run window, and if it doesnt work then oh well}')
-    printspeak('- need to be able to open power dvd')
     printspeak('- need to be able to open bluetooth settings')
     printspeak('- need to change it so that it is a GPIO input rather than Ctrl + F2 to wake JARVIS so that we can run it headlessley on a pi.')
     print(' ')
@@ -112,8 +120,8 @@ print("")
 print("")
 greetMe()
 time.sleep(1)
-printspeak('Hello ' + MASTER)
-todolist() #list the things i need to do to improve JARVIS
+printspeak('hello'+ MASTER)
+#todolist() #list the things i need to do to improve JARVIS
 printspeak('')
 printspeak('I am your digital assistant Jarvis')
 printspeak('Press Ctrl + F2 for me to start listening')
@@ -149,7 +157,7 @@ if __name__ == '__main__':
 
 #Miscilanious commands.        
         if 'hello' in query:
-            printspeak('Hello '+ MASTER, )
+            printspeak('hello' + MASTER)
 
         elif 'help' in query:
             listallcommands()

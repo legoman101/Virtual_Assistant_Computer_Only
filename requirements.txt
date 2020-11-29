@@ -1,4 +1,16 @@
-Flask
-pyttsx3
-mysql-connector-python
-#a bunch more stuff, but i need to check them all to see if they are default or not
+pyttsx3 #for text to speech
+pywin32 # for text to speech
+#smtplib #for speech to text
+SpeechRecognition #for speech recognition 
+wikipedia #for wikipedia searches
+wolframalpha #for wolframalpha searches
+keyboard #for keyboard inputs
+pynput #for keyboard and mouse inputs
+beautifulsoup4 #for google searches
+python-dotenv #to open info out of a .env
+google # for google searches
+PyAudio #if this doesnt work on windows, unhash the next line and re-has this one:
+#if you get errors from ^The pip install^:
+#"https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyaudio" - go here and download the appropriete whl for your system
+# then use the following command:
+#pip install "Path/To/File.whl"

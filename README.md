@@ -4,12 +4,12 @@
 
 - clone this repo
 - ```pip install requirements.txt```
-- update the ```Passes.py``` file with your information (the program will work as it is, you just wont be able to email or use wolfram)
-Format of the ```Passes.py``` script:
+- update the ```.env``` file with your information (the program will work as it is, you just wont be able to email or use wolfram)
+Format of the ```.env``` script:
 
 ```
 
-#Passes.py
+#.env
 wolframappid = '*'
 Your_Username = "*"
 Codingemail = "*"
